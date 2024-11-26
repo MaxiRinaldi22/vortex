@@ -5,6 +5,7 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { Hero } from "@/components/Hero";
 import { Servicios } from "@/components/Servicios";
+import { TimeLine } from "@/components/TimeLine";
 
 export default function Intro() {
   const logoRef = useRef(null);
@@ -50,8 +51,13 @@ export default function Intro() {
       >
         <Image src="/MFM.png" alt="MFM" height={500} width={500} />
       </div>
+{/* 
+      <div>
+        PONER UNA FLECHA QUE BAJE HACIA ABAJO CUANDO ESTE EN TOP Y SI NO ESTA EN TOP QUE SEA PARA ARRIBA
+      </div> */}
       <Hero />
       <Servicios />
+      <TimeLine />
     </section>
   );
 }

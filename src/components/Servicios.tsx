@@ -11,12 +11,12 @@ export function Servicios() {
     <section className="mt-[105vh]">
       <div className="flex h-[10vh] w-full items-center justify-center bg-main-default">
         <h2
-          className={` ${goldman.className} text-3xl tracking-[0.02em] text-white`}
+          className={` ${goldman.className} md:text-4xl text-3xl tracking-[0.02em] text-white`}
         >
           Nuestros servicios
         </h2>
       </div>
-      <div className="flex w-full md:flex-row flex-col items-center md:items-start justify-around gap-20 px-5 py-24">
+      <div className="flex w-full flex-col items-center justify-around gap-20 py-20 md:py-32 md:flex-row md:items-start px-10 md:px-20">
         <ListItem
           title="Estrategias Digitales"
           info={ESTRATIEGIAS_DIGITALES_DATA}

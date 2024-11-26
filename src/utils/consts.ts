@@ -1,4 +1,4 @@
-import { CLIENTES_TYPE, DATA } from "./types";
+import { CLIENTES_TYPE, DATA, TIMELINE_DATA_TYPE } from "./types";
 import gf from "/public/clientes/gf.png";
 import dr from "/public/clientes/dr.png";
 import LPD from "/public/clientes/LPD.png";
@@ -73,3 +73,41 @@ export const DESAROLLO_DIGITALES_DATA: DATA[] = [
       "Adaptación de sitios web para que sean compatibles con dispositivos móviles, tablets y computadoras",
   },
 ];
+
+export const TIMELINE_DATA : TIMELINE_DATA_TYPE[] = [
+  {
+    number: "01",
+    title: "Entender negocio y objetivos del cliente",
+    description: ""
+  },
+  {
+    number: "02",
+    title: "Definir el tono y estilo",
+    description: ""
+  },
+  {
+    number: "03",
+    title: "Diseño de wireframes",
+    description: ""
+  },
+  {
+    number: "04",
+    title: "Diseño web",
+    description: ""
+  },
+  {
+    number: "05",
+    title: "Desarrollo web",
+    description: ""
+  },
+  {
+    number: "06",
+    title: "Implementación del contenido",
+    description: "" 
+  },
+  {
+    number: "07",
+    title: "Optimización SEO",
+    description: ""
+  }
+]
