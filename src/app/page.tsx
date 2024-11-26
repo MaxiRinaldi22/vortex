@@ -137,8 +137,8 @@ export default function Intro() {
         <ContactBtn />
       </div>
 
-      <div className=" md:flex-row text-center items-center md:pl-80 md: md:justify-between absolute left-1/2 top-[85%] md:top-[92%] flex flex-col gap-5 w-full -translate-x-1/2 -translate-y-1/2 transform px-5">
-        <h2 className="md:items-start flex w-full   md:text-2xl text-xl font-[400] text-neutral-600">
+      <div className=" md:flex-row items-center justify-center md:pl-[328px] md:pr-[196px] md:justify-between absolute left-1/2 top-[85%] md:top-[92%] flex flex-col gap-5 w-full -translate-x-1/2 -translate-y-1/2 transform px-5">
+        <h2 className="md:items-start flex w-full md:w-80 justify-center md:justify-start md:text-2xl text-base font-[400] text-neutral-600">
           Clientes que han confiado en nosotros
         </h2>
         <div className="flex md:justify-end justify-center items-center  md:pr-32 gap-5  w-full ">
