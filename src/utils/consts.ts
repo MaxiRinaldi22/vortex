@@ -2,7 +2,7 @@ import { CLIENTES_TYPE, DATA } from "./types";
 import gf from "/public/clientes/gf.png";
 import dr from "/public/clientes/dr.png";
 import LPD from "/public/clientes/LPD.png";
-import { title } from "process";
+
 
 export const CLIENTS: CLIENTES_TYPE[] = [
   { img: gf, alt: "GF Barber Studio logo", scale: 70 },
