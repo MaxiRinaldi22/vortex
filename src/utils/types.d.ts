@@ -5,3 +5,8 @@ export type CLIENTES_TYPE = {
   alt: string;
   scale: number;
 };
+
+export type DATA = {
+  title: string;
+  description: string;
+}

@@ -2,6 +2,7 @@
 
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
+import { goldman } from "@/utils/fonts";
 
 export function ContactBtn() {
   const btnRef = useRef(null);
@@ -40,13 +41,13 @@ export function ContactBtn() {
     <div className="flex h-12 w-full items-center justify-center">
       <div
         ref={blurRef}
-        className="absolute h-12 w-56 rounded-full bg-main-default opacity-0 blur-[8px] filter"
+        className="absolute h-12 w-[260px] rounded-full bg-main-default opacity-0 blur-[8px] filter"
       ></div>
       <button
         ref={btnRef}
-        className="will-change-transform absolute z-50 h-12 w-56 rounded-full bg-main-default px-7 py-2 text-xl tracking-widest text-white"
+        className={`will-change-transform absolute flex items-center  justify-center z-50 h-12 w-[250px] rounded-full bg-main-default px-7 py-2 text-xl tracking-[0.2em] text-white ${goldman.className}`}
       >
-        Contactanos
+        CONTACTANOS
       </button>
     </div>
   );
