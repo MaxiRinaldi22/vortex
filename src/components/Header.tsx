@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
-import useOnTop from "@/hooks/UseOnTop";
+import useOnTop from "@/hooks/useOnTop";
+
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
