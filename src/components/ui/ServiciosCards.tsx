@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { CloseIcon, OpenIcon } from "./icons";
+import { CloseIcon, OpenIcon } from "./Icons";
 
 export function ServiciosCards() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
