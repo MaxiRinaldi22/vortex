@@ -5,15 +5,10 @@ import gsap from "gsap";
 import Image from "next/image";
 import useOnTop from "@/hooks/useOnTop";
 
-
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  
-  
   // const [pcMenuOpen, setPcMenuOpen] = useState(false);
-  const openRef = useRef(null);
-  const closeRef = useRef(null);
   const mobileRef = useRef(null);
   const headerRef = useRef(null);
   const top = useOnTop();
@@ -39,7 +34,7 @@ export function Header() {
     if (mobileRef.current) {
       gsap.to(mobileRef.current, {
         clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
-        duration: 1,
+        duration: 2,
         ease: "slow",
         onComplete: () => setMobileMenuOpen(false),
       });
@@ -60,36 +55,32 @@ export function Header() {
     gsap.fromTo(
       headerRef.current,
       { opacity: 0 },
-      { opacity: 1, duration: 3, delay: 5.7 },
+      { opacity: 1, duration: 3, delay: 4.7 },
     );
   }, []);
 
   return (
     <header
       ref={headerRef}
-      className={`fixed z-50 flex min-h-[10vh] w-full items-center justify-between px-5 transition duration-700 ease-in-out md:px-72 ${top ? "bg-transparent" : "bg-[#1F1F1F]/80 shadow-xl backdrop-blur-md"} ${mobileMenuOpen ? "bg-[#1F1F1F]/80 backdrop-blur-md" : ""}`}
+      className={`fixed z-50 flex min-h-[10vh] w-full items-center justify-between px-5 transition duration-700 ease-in-out md:px-72 ${top ? "bg-transparent" : "bg-[#1F1F1F]/80 shadow-xl backdrop-blur-md"} `}
     >
       <Image
         src="/MFM.png"
         height={100}
         width={100}
-        className="hidden md:block"
+        className="z-50 hidden md:block"
         alt="MFM logo"
       />
       <Image
         src="/MFM.png"
         height={60}
         width={60}
-        className="block md:hidden"
+        className="z-50 block md:hidden"
         alt="MFM logo"
       />
 
       {mobileMenuOpen ? (
-        <button
-          ref={closeRef}
-          className="z-50 cursor-pointer"
-          onClick={() => handleDespawn()}
-        >
+        <button className="z-50 cursor-pointer" onClick={() => handleDespawn()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -102,7 +93,6 @@ export function Header() {
         </button>
       ) : (
         <button
-          ref={openRef}
           className="z-50 cursor-pointer"
           onClick={() => setMobileMenuOpen(true)}
         >
@@ -121,9 +111,9 @@ export function Header() {
       {mobileMenuOpen && (
         <div
           ref={mobileRef}
-          className="absolute left-0 top-0 z-50 mt-[10vh] flex h-[90vh] w-full flex-col items-center justify-center gap-5 bg-[#1F1F1F]/95 text-4xl tracking-widest text-white backdrop-blur-md"
+          className="absolute left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center gap-5 bg-[#1F1F1F]/95 text-4xl tracking-widest text-white backdrop-blur-md"
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-       >
+        >
           <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Contact</a>
