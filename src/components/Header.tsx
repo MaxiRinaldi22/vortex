@@ -3,13 +3,57 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+import useOnTop from "@/hooks/UseOnTop";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // const [pcMenuOpen, setPcMenuOpen] = useState(false);
-  const headerRef = useRef(null);
 
-  console.log(mobileMenuOpen);
+  
+  
+  // const [pcMenuOpen, setPcMenuOpen] = useState(false);
+  const openRef = useRef(null);
+  const closeRef = useRef(null);
+  const mobileRef = useRef(null);
+  const headerRef = useRef(null);
+  const top = useOnTop();
+
+  // HAY QUE DESACTIVAR EL SCROLL ON Y CUANDO ESTA ABIERTO EL MOBILEMENU
+  // useEffect(() => {
+  //   if (mobileMenuOpen) {
+  //     document.body.style.overflow = "hidden"; // Asegura que ambos ejes estén bloqueados
+  //     document.body.style.height = "100%"; // Evita el scroll vertical
+  //   } else {
+  //     document.body.style.overflow = "auto"; // Vuelve al estado normal
+  //     document.body.style.height = "auto";
+  //   }
+
+  //   // Cleanup al desmontar
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //     document.body.style.height = "auto";
+  //   };
+  // }, [mobileMenuOpen]);
+
+  const handleDespawn = () => {
+    if (mobileRef.current) {
+      gsap.to(mobileRef.current, {
+        clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
+        duration: 1,
+        ease: "slow",
+        onComplete: () => setMobileMenuOpen(false),
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      gsap.to(mobileRef.current, {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        duration: 2,
+        ease: "slow",
+      });
+    }
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     gsap.fromTo(
@@ -22,7 +66,7 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className={`z-50 flex min-h-[10vh] items-center justify-between px-5 md:px-72`}
+      className={`fixed z-50 flex min-h-[10vh] w-full items-center justify-between px-5 transition duration-700 ease-in-out md:px-72 ${top ? "bg-transparent" : "bg-[#1F1F1F]/80 shadow-xl backdrop-blur-md"} ${mobileMenuOpen ? "bg-[#1F1F1F]/80 backdrop-blur-md" : ""}`}
     >
       <Image
         src="/MFM.png"
@@ -41,8 +85,9 @@ export function Header() {
 
       {mobileMenuOpen ? (
         <button
+          ref={closeRef}
           className="z-50 cursor-pointer"
-          onClick={() => setMobileMenuOpen(false)}
+          onClick={() => handleDespawn()}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,6 +101,7 @@ export function Header() {
         </button>
       ) : (
         <button
+          ref={openRef}
           className="z-50 cursor-pointer"
           onClick={() => setMobileMenuOpen(true)}
         >
@@ -72,14 +118,15 @@ export function Header() {
       )}
 
       {mobileMenuOpen && (
-       
-          <div className="absolute left-0 top-0 z-50 mt-[10vh] flex h-[200px] w-full flex-col items-center justify-center gap-5 border-b-2 border-main-default text-white">
-            {" "}
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-          </div>
-      
+        <div
+          ref={mobileRef}
+          className="absolute left-0 top-0 z-50 mt-[10vh] flex h-[90vh] w-full flex-col items-center justify-center gap-5 bg-[#1F1F1F]/95 text-4xl tracking-widest text-white backdrop-blur-md"
+          style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
+       >
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
       )}
     </header>
   );

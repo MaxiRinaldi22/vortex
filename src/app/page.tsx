@@ -12,6 +12,8 @@ export default function Intro() {
   const lineRef = useRef(null);
   const blurRef = useRef(null);
   const workBtnRef = useRef(null);
+  const clientsRef = useRef(null);
+  const imgRef = useRef(null);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -87,6 +89,38 @@ export default function Intro() {
         delay: 5.7,
       },
     );
+
+    
+    gsap.fromTo(
+      clientsRef.current,
+      {
+        opacity: 0,
+        scale: 0.5,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 3,
+        ease: "slow",
+        delay: 5.7,
+      },
+    );
+
+    
+    gsap.fromTo(
+      imgRef.current,
+      {
+        opacity: 0,
+        scale: 0.5,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 3,
+        ease: "slow",
+        delay: 5.7,
+      },
+    );
   }, []);
 
   // Mover todo esto a un hero (Acomodar todo para no usar el absolute y que pueda tener un h predefinido)
@@ -103,7 +137,8 @@ export default function Intro() {
         >
           <Image src="/MFM.png" alt="MFM" height={500} width={500} />
         </div>
-        <div className="flex flex-col items-center justify-center gap-3">
+
+        <div className="flex z-40 flex-col items-center justify-center gap-3">
           <h1
             ref={mainTextRef}
             className="absolute left-1/2 top-[30%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center text-center text-[40px] font-[200] text-white will-change-transform md:top-[36%] md:gap-4 md:p-0 md:text-7xl"
@@ -138,11 +173,11 @@ export default function Intro() {
           <ContactBtn />
         </div>
 
-        <div className="absolute left-1/2 top-[95%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-5 px-5 md:top-[92%] md:flex-row md:justify-between md:pl-[328px] md:pr-[196px]">
-          <h2 className="flex w-full justify-center text-base font-[400] text-neutral-600 md:w-80 md:items-start md:justify-start md:text-xl">
+        <div className="absolute left-1/2 top-[97%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-5 px-5 md:top-[92%] md:flex-row md:justify-between md:pl-[328px] md:pr-[196px]">
+          <h2 ref={clientsRef} className="will-change-transform flex w-full justify-center text-base font-[400] text-neutral-600 md:w-80 md:items-start md:justify-start md:text-xl">
             Clientes que han confiado en nosotros
           </h2>
-          <div className="flex w-full items-center justify-center gap-5 md:justify-end md:pr-32">
+          <div ref={imgRef} className="flex w-full items-center justify-center gap-5 md:justify-end md:pr-32">
             {CLIENTS.map((elements) => {
               return (
                 <div
@@ -161,7 +196,7 @@ export default function Intro() {
             })}
           </div>
         </div>
-      <section className="h-screen mt-[90vh] w-full border"></section>
+      <section className="h-screen mt-[100vh] w-full border"></section>
       </section>
   );
 }
