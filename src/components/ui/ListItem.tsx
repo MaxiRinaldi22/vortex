@@ -3,8 +3,10 @@
 import { DATA, OPEN_STATE, REF_OBJECT } from "@/utils/types";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Image, { StaticImageData } from "next/image";
+import Aos from "aos";
 
-export function ListItem({ title, info }: { title: string; info: DATA[] }) {
+export function ListItem({ title, info, img }: { title: string; info: DATA[], img: StaticImageData }) {
   const [open, setOpen] = useState<OPEN_STATE>(
     info.reduce((acc, _, index) => ({ ...acc, [index]: false }), {}),
   );
@@ -35,6 +37,10 @@ export function ListItem({ title, info }: { title: string; info: DATA[] }) {
   };
 
   useEffect(() => {
+    Aos.init({ duration: 1200 });
+  }, [])
+
+  useEffect(() => {
     Object.keys(open).forEach((index) => {
       const numberIndex = Number(index);
       if (open[numberIndex]) {
@@ -48,16 +54,19 @@ export function ListItem({ title, info }: { title: string; info: DATA[] }) {
   }, [open]);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-3 w-full">
-      <div className="h-44 w-44 rounded-full border-2 border-main-default"></div>
-      <h3 className="pb-5 text-2xl tracking-widest text-white w-full text-center">{title}</h3>
-      <ul className="flex w-[450px] flex-col gap-5 text-base font-[200] md:w-full text-white">
+    <div data-aos="fade-up" className="flex flex-col items-center justify-center gap-3 w-full">
+      <div className="h-44 w-44 border border-main-default rounded-full p-5 ">
+        <Image src={img} alt="imagen" className="h-full w-full"/>
+
+      </div>
+      <h3 className="pb-10 text-2xl tracking-widest text-white w-full text-center">{title}</h3>
+      <ul className="flex w-[450px] flex-col gap-6 text-base font-[200] md:w-full text-white">
         {info.map((item, i) => (
           <li key={item.title} className="flex w-full flex-col md:px-0 px-14">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="h-2 w-2 rounded-full bg-white"></div>
-                <h4>{item.title}</h4>
+                {/* <div className="h-2 w-2 rounded-full bg-white"></div> */}
+                <h4 className="font-[300]">{item.title}</h4>
               </div>
               <button
                 onClick={() => handleOpen(i)}
@@ -83,7 +92,7 @@ export function ListItem({ title, info }: { title: string; info: DATA[] }) {
                   }
                 }}
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-                className="mt-2 text-sm font-[100] tracking-widest max-w-[500px]"
+                className="mt-2 text-sm font-[200] text-neutral-300 tracking-widest max-w-[500px]"
               >
                 {item.description}
               </p>

@@ -64,6 +64,7 @@ export function Header() {
       ref={headerRef}
       className={`fixed z-50 flex min-h-[10vh] w-full items-center justify-between px-5 transition duration-700 ease-in-out md:px-72 ${top ? "bg-transparent" : "bg-[#1F1F1F]/80 shadow-xl backdrop-blur-md"} `}
     >
+      {/* HACER QUE AL TOCAR EL LOGO SE VAYA HACIA ARRIBA DEL TODO */}
       <Image
         src="/MFM.png"
         height={100}

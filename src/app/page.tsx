@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { Hero } from "@/components/Hero";
 import { Servicios } from "@/components/Servicios";
 import { TimeLine } from "@/components/TimeLine";
+import { Contact } from "@/components/Contact";
 
 export default function Intro() {
   const logoRef = useRef(null);
@@ -38,7 +39,7 @@ export default function Intro() {
 
   }, []);
 
-  // Mover todo esto a un hero (Acomodar todo para no usar el absolute y que pueda tener un h predefinido)
+  // HACER QUE LA ANIMACION SI SE TIRA F5 VAYA HACIA ARRIBA DEL TODO Y QUE NO SE PUEDA BAJAR SI SE ESTA HACIENDO LA ANIMACION
   return (
     <section>
       <div
@@ -58,6 +59,7 @@ export default function Intro() {
       <Hero />
       <Servicios />
       <TimeLine />
+      <Contact />
     </section>
   );
 }

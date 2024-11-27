@@ -78,36 +78,69 @@ export const TIMELINE_DATA : TIMELINE_DATA_TYPE[] = [
   {
     number: "01",
     title: "Entender negocio y objetivos del cliente",
-    description: ""
+    description: "Lo primero es comprender a fondo el negocio del cliente, incluyendo sus productos o servicios, así como el branding de la empresa y los objetivos que busca alcanzar."
   },
   {
     number: "02",
     title: "Definir el tono y estilo",
-    description: ""
+    description: "Una vez entendamos la identidad del negocio, crearemos diferentes moodboards que nos ayuden a definir la linea grafica que vamos a seguir en el desarrollo de la web."
   },
   {
     number: "03",
     title: "Diseño de wireframes",
-    description: ""
+    description: "Los wireframes son una representación visual de la estructura de un sitio web. Estos los usaremos para planificar la arquitectura y la navegación del sitio, tanto en mobile como en desktop."
   },
   {
     number: "04",
     title: "Diseño web",
-    description: ""
+    description: "Una vez definidos los wireframes, procederemos a desarrollar el diseño visual del sitio web. Esto nos permitirá anticipar su apariencia y navegación, estableciendo la versión final de su aspecto."
   },
   {
     number: "05",
     title: "Desarrollo web",
-    description: ""
+    description: "Con el diseño visual aprobado, iniciaremos el desarrollo del sitio web. En esta etapa, transformaremos el diseño en un producto funcional, asegurando que cada componente funcione correctamente y sea totalmente responsive."
   },
   {
     number: "06",
     title: "Implementación del contenido",
-    description: "" 
+    description: "Finalizado el desarrollo, pasamos a la implementación del contenido. En esta etapa, incorporamos textos, imágenes y demás elementos, garantizando una estructura clara y una comunicación efectiva." 
   },
   {
     number: "07",
     title: "Optimización SEO",
-    description: ""
+    description: "Una vez implementado el contenido, nos enfocamos en la optimización SEO. Este proceso mejora la visibilidad del sitio en los motores de búsqueda mediante estrategias como la optimización de palabras clave, metaetiquetas y velocidad de carga."
+  }
+]
+
+export const INPUT_DATA = [
+  {
+    placeholder: "Nombre",
+    name: "user_name",
+    type: "text",
+  },
+  {
+    placeholder: "Apellido",
+    name: "user_last_name",
+    type: "text",
+  },
+  {
+    placeholder: "Empresa",
+    name: "user_company",
+    type: "text",
+  },
+  {
+    placeholder: "Email",
+    name: "user_email",
+    type: "email",
+  },
+
+  {
+    placeholder: "Telefono",
+    name: "user_phone",
+    type: "tel",
+  },
+  {
+    placeholder: "Mensaje",
+    name: "message",
   }
 ]
