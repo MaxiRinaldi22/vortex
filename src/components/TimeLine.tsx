@@ -15,7 +15,7 @@ export function TimeLine() {
   
   return (
     <section className="flex w-full flex-col items-center justify-center gap-10 md:gap-24">
-      <div className="flex w-full flex-col items-center justify-center gap-5 px-5 md:px-0">
+      <div data-aos="zoom-in" className="flex w-full flex-col items-center justify-center gap-5 px-5 md:px-0">
         <h2
           className={`${goldman.className} text-3xl tracking-[0.02em] text-white md:text-7xl`}
         >

@@ -36,7 +36,6 @@ export function ContactBtn() {
   }, []);
 
 
-  // Hace un rebot raro la animacion de el boton
   return (
     <div className="flex h-12 w-full items-center justify-center">
       <div

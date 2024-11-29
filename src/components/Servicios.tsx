@@ -25,7 +25,7 @@ export function Servicios() {
       <div className="flex h-[10vh] md:h-[13vh] w-full items-center justify-center bg-main-default">
         <h2
           data-aos="zoom-in"
-          className={` ${goldman.className} text-2xl tracking-[0.02em] text-white md:text-4xl`}
+          className={` ${goldman.className} text-2xl tracking-[0.02em] text-white md:text-5xl`}
         >
           NUESTROS SERVICIOS
         </h2>

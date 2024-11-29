@@ -3,6 +3,24 @@ import gf from "/public/clientes/gf.png";
 import dr from "/public/clientes/dr.png";
 import LPD from "/public/clientes/LPD.png";
 
+export const LINKS = [
+  {
+    title: "Inicio",
+    href: "/",
+  },
+  {
+    title: "Nuestros Servicios",
+    href: "/",
+  },
+  {
+    title: "Metodolgia de Trabajo",
+    href: "/",
+  },
+  {
+    title: "Contacto",
+    href: "/",
+  },
+];
 
 export const CLIENTS: CLIENTES_TYPE[] = [
   { img: gf, alt: "GF Barber Studio logo", scale: 70 },
@@ -74,43 +92,50 @@ export const DESAROLLO_DIGITALES_DATA: DATA[] = [
   },
 ];
 
-export const TIMELINE_DATA : TIMELINE_DATA_TYPE[] = [
+export const TIMELINE_DATA: TIMELINE_DATA_TYPE[] = [
   {
     number: "01",
     title: "Entender negocio y objetivos del cliente",
-    description: "Lo primero es comprender a fondo el negocio del cliente, incluyendo sus productos o servicios, así como el branding de la empresa y los objetivos que busca alcanzar."
+    description:
+      "Lo primero es comprender a fondo el negocio del cliente, incluyendo sus productos o servicios, así como el branding de la empresa y los objetivos que busca alcanzar.",
   },
   {
     number: "02",
     title: "Definir el tono y estilo",
-    description: "Una vez entendamos la identidad del negocio, crearemos diferentes moodboards que nos ayuden a definir la linea grafica que vamos a seguir en el desarrollo de la web."
+    description:
+      "Una vez entendamos la identidad del negocio, crearemos diferentes moodboards que nos ayuden a definir la linea grafica que vamos a seguir en el desarrollo de la web.",
   },
   {
     number: "03",
     title: "Diseño de wireframes",
-    description: "Los wireframes son una representación visual de la estructura de un sitio web. Estos los usaremos para planificar la arquitectura y la navegación del sitio, tanto en mobile como en desktop."
+    description:
+      "Los wireframes son una representación visual de la estructura de un sitio web. Estos los usaremos para planificar la arquitectura y la navegación del sitio, tanto en mobile como en desktop.",
   },
   {
     number: "04",
     title: "Diseño web",
-    description: "Una vez definidos los wireframes, procederemos a desarrollar el diseño visual del sitio web. Esto nos permitirá anticipar su apariencia y navegación, estableciendo la versión final de su aspecto."
+    description:
+      "Una vez definidos los wireframes, procederemos a desarrollar el diseño visual del sitio web. Esto nos permitirá anticipar su apariencia y navegación, estableciendo la versión final de su aspecto.",
   },
   {
     number: "05",
     title: "Desarrollo web",
-    description: "Con el diseño visual aprobado, iniciaremos el desarrollo del sitio web. En esta etapa, transformaremos el diseño en un producto funcional, asegurando que cada componente funcione correctamente y sea totalmente responsive."
+    description:
+      "Con el diseño visual aprobado, iniciaremos el desarrollo del sitio web. En esta etapa, transformaremos el diseño en un producto funcional, asegurando que cada componente funcione correctamente y sea totalmente responsive.",
   },
   {
     number: "06",
     title: "Implementación del contenido",
-    description: "Finalizado el desarrollo, pasamos a la implementación del contenido. En esta etapa, incorporamos textos, imágenes y demás elementos, garantizando una estructura clara y una comunicación efectiva." 
+    description:
+      "Finalizado el desarrollo, pasamos a la implementación del contenido. En esta etapa, incorporamos textos, imágenes y demás elementos, garantizando una estructura clara y una comunicación efectiva.",
   },
   {
     number: "07",
     title: "Optimización SEO",
-    description: "Una vez implementado el contenido, nos enfocamos en la optimización SEO. Este proceso mejora la visibilidad del sitio en los motores de búsqueda mediante estrategias como la optimización de palabras clave, metaetiquetas y velocidad de carga."
-  }
-]
+    description:
+      "Una vez implementado el contenido, nos enfocamos en la optimización SEO. Este proceso mejora la visibilidad del sitio en los motores de búsqueda mediante estrategias como la optimización de palabras clave, metaetiquetas y velocidad de carga.",
+  },
+];
 
 export const INPUT_DATA = [
   {
@@ -142,5 +167,5 @@ export const INPUT_DATA = [
   {
     placeholder: "Mensaje",
     name: "message",
-  }
-]
+  },
+];

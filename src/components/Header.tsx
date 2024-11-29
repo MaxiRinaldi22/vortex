@@ -4,31 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import useOnTop from "@/hooks/useOnTop";
+import { LINKS } from "@/utils/consts";
+import Link from "next/link";
+import { ContactInfo } from "./ui/ContactInfo";
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // const [pcMenuOpen, setPcMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const mobileRef = useRef(null);
   const headerRef = useRef(null);
   const top = useOnTop();
 
   // HAY QUE DESACTIVAR EL SCROLL ON Y CUANDO ESTA ABIERTO EL MOBILEMENU
-  // useEffect(() => {
-  //   if (mobileMenuOpen) {
-  //     document.body.style.overflow = "hidden"; // Asegura que ambos ejes estén bloqueados
-  //     document.body.style.height = "100%"; // Evita el scroll vertical
-  //   } else {
-  //     document.body.style.overflow = "auto"; // Vuelve al estado normal
-  //     document.body.style.height = "auto";
-  //   }
-
-  //   // Cleanup al desmontar
-  //   return () => {
-  //     document.body.style.overflow = "auto";
-  //     document.body.style.height = "auto";
-  //   };
-  // }, [mobileMenuOpen]);
 
   const handleDespawn = () => {
     if (mobileRef.current) {
@@ -36,20 +22,20 @@ export function Header() {
         clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0%)",
         duration: 2,
         ease: "slow",
-        onComplete: () => setMobileMenuOpen(false),
+        onComplete: () => setMenuOpen(false),
       });
     }
   };
 
   useEffect(() => {
-    if (mobileMenuOpen) {
+    if (menuOpen) {
       gsap.to(mobileRef.current, {
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
         duration: 2,
         ease: "slow",
       });
     }
-  }, [mobileMenuOpen]);
+  }, [menuOpen]);
 
   useEffect(() => {
     gsap.fromTo(
@@ -66,21 +52,21 @@ export function Header() {
     >
       {/* HACER QUE AL TOCAR EL LOGO SE VAYA HACIA ARRIBA DEL TODO */}
       <Image
-        src="/MFM.png"
-        height={100}
-        width={100}
+        src="/vortexText.png"
+        height={160}
+        width={160}
         className="z-50 hidden md:block"
         alt="MFM logo"
       />
       <Image
-        src="/MFM.png"
-        height={60}
-        width={60}
+        src="/vortexText.png"
+        height={110}
+        width={110}
         className="z-50 block md:hidden"
         alt="MFM logo"
       />
 
-      {mobileMenuOpen ? (
+      {menuOpen ? (
         <button className="z-50 cursor-pointer" onClick={() => handleDespawn()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +81,7 @@ export function Header() {
       ) : (
         <button
           className="z-50 cursor-pointer"
-          onClick={() => setMobileMenuOpen(true)}
+          onClick={() => setMenuOpen(true)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -109,15 +95,27 @@ export function Header() {
         </button>
       )}
 
-      {mobileMenuOpen && (
+      {menuOpen && (
         <div
           ref={mobileRef}
-          className="absolute left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-center gap-5 bg-[#1F1F1F]/95 text-4xl tracking-widest text-white backdrop-blur-md"
+          className="absolute left-0 top-0 z-40 flex h-screen w-full flex-col py-6 justify-between items-center gap-5 bg-[#1F1F1F]/95 text-4xl tracking-widest text-white backdrop-blur-md"
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
+          onClick={() => handleDespawn()}
         >
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <div className="flex flex-col h-full items-center justify-center gap-5">
+            {LINKS.map((link) => (
+              <Link
+                key={link.title}
+                href={link.href}
+                className="text-lg font-semibold tracking-[0.2em] text-white transition-all duration-150 ease-in-out hover:text-main-default md:text-3xl"
+              >
+                {link.title}
+              </Link>
+            ))}
+          </div>
+          <div>
+            <ContactInfo footer={true} header={true} />
+          </div>
         </div>
       )}
     </header>

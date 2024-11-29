@@ -55,7 +55,7 @@ export function ListItem({ title, info, img }: { title: string; info: DATA[], im
 
   return (
     <div data-aos="fade-up" className="flex flex-col items-center justify-center gap-3 w-full">
-      <div className="h-44 w-44 border border-main-default rounded-full p-5 ">
+      <div className="h-44 w-44 border-2 border-main-default rounded-full p-5 ">
         <Image src={img} alt="imagen" className="h-full w-full"/>
 
       </div>

@@ -3,6 +3,8 @@ import "aos/dist/aos.css";
 import "./globals.css";
 import { lexend } from "@/utils/fonts";
 import { Header } from "@/components/Header";
+import ScrollToTop from "@/components/ScrollToTop";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Vortex Webs",
@@ -18,8 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={lexend.className}>
         <div className="bg"></div>
-        <Header />
-        <main>{children}</main>
+        <ScrollToTop>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ScrollToTop>
       </body>
     </html>
   );
