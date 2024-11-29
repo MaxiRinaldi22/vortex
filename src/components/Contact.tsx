@@ -34,13 +34,13 @@ export function Contact() {
           </h3>
         </div>
 
-        <div className="flex h-full w-full flex-col items-center justify-center gap-5 px-5 md:w-1/2 md:flex-row-reverse md:items-start md:px-0">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-5 px-5 md:w-1/2 md:flex-row-reverse md:items-start mb-6  md:px-0">
           <form
             data-aos="fade-left"
             ref={form}
             onSubmit={sendEmail}
             autoComplete="off"
-            className="w-full"
+            className="w-full mb-6"
           >
             {INPUT_DATA.map((input) =>
               input.name !== "message" ? (
@@ -62,7 +62,7 @@ export function Contact() {
             )}
           </form>
 
-            <ContactInfo footer={false} header={false} />
+          <ContactInfo footer={false} header={false} />
         </div>
       </section>
       <div className="flex h-fit w-full items-center justify-center bg-main-default py-7 text-center">

@@ -34,7 +34,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <p className="mt-4 text-sm tracking-widest font-[100] mb-1 text-neutral-300 md:mt-6">
+      <p className="mt-4 text-center text-sm tracking-widest font-[100] mb-1 text-neutral-300 md:mt-6">
         © 2023 Vortex Webs. Todos los derechos reservados
       </p>
     </footer>

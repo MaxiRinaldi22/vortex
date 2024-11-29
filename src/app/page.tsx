@@ -39,7 +39,7 @@ export default function Intro() {
 
   }, []);
 
-  // HACER QUE LA ANIMACION SI SE TIRA F5 VAYA HACIA ARRIBA DEL TODO Y QUE NO SE PUEDA BAJAR SI SE ESTA HACIENDO LA ANIMACION
+  // HACER QUE NO SE PUEDA BAJAR SI LA ANIMACION SE ESTA EJECUNTANDO 
   return (
     <section>
       <div
@@ -50,7 +50,7 @@ export default function Intro() {
           overflowY: "hidden",
         }}
       >
-        <Image src="/MFM.png" alt="MFM" height={500} width={500} />
+        <Image src="/vortex.png" alt="Vortex Webs logo" height={500} width={500} />
       </div>
 {/* 
       <div>
