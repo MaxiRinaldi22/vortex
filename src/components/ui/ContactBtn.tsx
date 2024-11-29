@@ -35,7 +35,6 @@ export function ContactBtn() {
     );
   }, []);
 
-
   return (
     <div className="flex h-12 w-full items-center justify-center">
       <div
@@ -44,7 +43,7 @@ export function ContactBtn() {
       ></div>
       <button
         ref={btnRef}
-        className={`will-change-transform absolute flex items-center  justify-center z-50 h-12 w-[250px] rounded-full bg-main-default px-7 py-2 text-xl tracking-[0.2em] text-white ${goldman.className}`}
+        className={`absolute z-50 flex h-12 w-[250px] items-center justify-center rounded-full bg-main-default px-7 py-2 text-xl tracking-[0.2em] text-white will-change-transform ${goldman.className}`}
       >
         CONTACTANOS
       </button>

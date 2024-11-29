@@ -11,7 +11,6 @@ import { Contact } from "@/components/Contact";
 export default function Intro() {
   const logoRef = useRef(null);
 
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -36,10 +35,9 @@ export default function Intro() {
       ease: "slow",
       delay: 4.3,
     });
-
   }, []);
 
-  // HACER QUE NO SE PUEDA BAJAR SI LA ANIMACION SE ESTA EJECUNTANDO 
+  // HACER QUE NO SE PUEDA BAJAR SI LA ANIMACION SE ESTA EJECUNTANDO
   return (
     <section>
       <div
@@ -50,9 +48,14 @@ export default function Intro() {
           overflowY: "hidden",
         }}
       >
-        <Image src="/vortex.png" alt="Vortex Webs logo" height={500} width={500} />
+        <Image
+          src="/vortex.png"
+          alt="Vortex Webs logo"
+          height={500}
+          width={500}
+        />
       </div>
-{/* 
+      {/* 
       <div>
         PONER UNA FLECHA QUE BAJE HACIA ABAJO CUANDO ESTE EN TOP Y SI NO ESTA EN TOP QUE SEA PARA ARRIBA
       </div> */}

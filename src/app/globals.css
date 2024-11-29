@@ -2,41 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
 body {
-  background-color: #1F1F1F;
+  background-color: #1f1f1f;
   margin: 0;
 }
 
-
-/* Aplica a todo el sitio */
 * {
-  scrollbar-width: none; /* Para Firefox */
-  scrollbar-color: #888 transparent; /* Color de la barra y el fondo */
+  scrollbar-width: none; 
+  scrollbar-color: #888 transparent; 
 }
 
-/* Para navegadores basados en WebKit (Chrome, Edge, Safari, etc.) */
 ::-webkit-scrollbar {
-  width: 2px; /* Ancho de la barra */
-  height: 2px; /* Alto para barras horizontales */
+  width: 2px; 
+  height: 2px; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #888; /* Color de la barra */
-  border-radius: 10px; /* Bordes redondeados */
+  background-color: #888; 
+  border-radius: 10px; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Color de la barra al pasar el mouse */
+  background-color: #555; 
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; /* Fondo de la pista */
+  background: transparent; 
 }
-
 
 .bg {
   position: fixed;
@@ -52,7 +49,6 @@ body {
   opacity: 0.9;
   visibility: visible;
 }
-
 
 @keyframes bg-animation {
   0% {

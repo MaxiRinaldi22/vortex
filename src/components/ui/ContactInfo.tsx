@@ -7,8 +7,8 @@ export function ContactInfo({
 }) {
   return (
     <div
-    data-aos={!header && !footer ? "fade-right" : ""}
-      className={`flex h-full w-full items-start justify-start gap-5 p-2 ${header ? "md:flex-row flex-col" : "flex-col"}`}
+      data-aos={!header && !footer ? "fade-right" : ""}
+      className={`flex h-full w-full items-start justify-start gap-5 p-2 ${header ? "flex-col md:flex-row" : "flex-col"}`}
     >
       <div className="flex items-center justify-center gap-5">
         <svg

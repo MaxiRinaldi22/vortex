@@ -6,7 +6,15 @@ import gsap from "gsap";
 import Image, { StaticImageData } from "next/image";
 import Aos from "aos";
 
-export function ListItem({ title, info, img }: { title: string; info: DATA[], img: StaticImageData }) {
+export function ListItem({
+  title,
+  info,
+  img,
+}: {
+  title: string;
+  info: DATA[];
+  img: StaticImageData;
+}) {
   const [open, setOpen] = useState<OPEN_STATE>(
     info.reduce((acc, _, index) => ({ ...acc, [index]: false }), {}),
   );
@@ -18,7 +26,6 @@ export function ListItem({ title, info, img }: { title: string; info: DATA[], im
     if (open[index]) {
       handleDespawn(index);
       console.log("despawn");
-      
     } else {
       console.log("spawn");
       setOpen((prev) => ({ ...prev, [index]: true }));
@@ -38,7 +45,7 @@ export function ListItem({ title, info, img }: { title: string; info: DATA[], im
 
   useEffect(() => {
     Aos.init({ duration: 1200 });
-  }, [])
+  }, []);
 
   useEffect(() => {
     Object.keys(open).forEach((index) => {
@@ -54,23 +61,25 @@ export function ListItem({ title, info, img }: { title: string; info: DATA[], im
   }, [open]);
 
   return (
-    <div data-aos="fade-up" className="flex flex-col items-center justify-center gap-3 w-full">
-      <div className="h-44 w-44 border-2 border-main-default rounded-full p-5 ">
-        <Image src={img} alt="imagen" className="h-full w-full"/>
-
-      </div>
-      <h3 className="pb-10 text-2xl tracking-widest text-white w-full text-center">{title}</h3>
-      <ul className="flex w-[450px] flex-col gap-6 text-base font-[200] md:w-full text-white">
+    <div
+      data-aos="fade-up"
+      className="flex w-full flex-col items-center justify-center gap-3"
+    >
+      {/* <div className="h-44 w-44 rounded-full border-2 border-main-default p-5"> */}
+        <Image src={img} alt="imagen" className="h-44 w-44" />
+      {/* </div> */}
+      <h3 className="w-full pb-10 text-center text-2xl tracking-widest text-white">
+        {title}
+      </h3>
+      <ul className="flex w-[450px]  flex-col gap-6 text-base font-[200] text-white md:w-full">
         {info.map((item, i) => (
-          <li key={item.title} className="flex w-full flex-col md:px-0 px-14">
+          <li key={item.title} className="flex w-full flex-col px-14 md:px-0">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 {/* <div className="h-2 w-2 rounded-full bg-white"></div> */}
                 <h4 className="font-[300]">{item.title}</h4>
               </div>
-              <button
-                onClick={() => handleOpen(i)}
-              >
+              <button onClick={() => handleOpen(i)}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -92,7 +101,7 @@ export function ListItem({ title, info, img }: { title: string; info: DATA[], im
                   }
                 }}
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-                className="mt-2 text-sm font-[200] text-neutral-300 tracking-widest max-w-[500px]"
+                className="mt-2 max-w-[500px] text-sm font-[200] tracking-widest text-neutral-300"
               >
                 {item.description}
               </p>

@@ -135,7 +135,6 @@ export function Hero() {
                 key={elements.alt}
                 className="flex items-center justify-center"
               >
-                {/* PONER A TODOS LOS LOGOS CON EL MISMO TAMANO */}
                 <Image
                   src={elements.img}
                   alt={elements.alt}

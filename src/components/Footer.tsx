@@ -6,7 +6,7 @@ import { ContactInfo } from "./ui/ContactInfo";
 
 export function Footer() {
   return (
-    <footer className="flex h-fit flex-col items-center justify-center bg-[#3B3B3B] pt-8">
+    <footer className="flex h-fit flex-col items-center justify-center bg-[#1f1f1f] pt-8">
       <div className="flex flex-col items-center justify-center md:flex-row">
         <Image
           src={logo}

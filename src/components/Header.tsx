@@ -50,7 +50,6 @@ export function Header() {
       ref={headerRef}
       className={`fixed z-50 flex min-h-[10vh] w-full items-center justify-between px-5 transition duration-700 ease-in-out md:px-72 ${top ? "bg-transparent" : "bg-[#1F1F1F]/80 shadow-xl backdrop-blur-md"} `}
     >
-      {/* HACER QUE AL TOCAR EL LOGO SE VAYA HACIA ARRIBA DEL TODO */}
       <Image
         src="/vortexText.png"
         height={160}
@@ -98,11 +97,11 @@ export function Header() {
       {menuOpen && (
         <div
           ref={mobileRef}
-          className="absolute left-0 top-0 z-40 flex h-screen w-full flex-col py-6 justify-between items-center gap-5 bg-[#1F1F1F]/95 text-4xl tracking-widest text-white backdrop-blur-md"
+          className="absolute left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-between gap-5 bg-[#1F1F1F]/95 py-6 text-4xl tracking-widest text-white backdrop-blur-md"
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
           onClick={() => handleDespawn()}
         >
-          <div className="flex flex-col h-full items-center justify-center gap-5">
+          <div className="flex h-full flex-col items-center justify-center gap-5">
             {LINKS.map((link) => (
               <Link
                 key={link.title}
