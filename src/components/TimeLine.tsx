@@ -14,7 +14,7 @@ export function TimeLine() {
   }, []);
 
   return (
-    <section className="flex w-full flex-col items-center justify-center gap-10 md:gap-24">
+    <section id="metodologia" className="flex w-full flex-col items-center justify-center gap-10 md:gap-24">
       <div
         data-aos="zoom-in"
         className="flex w-full flex-col items-center justify-center gap-5 px-5 md:px-0"

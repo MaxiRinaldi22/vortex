@@ -21,7 +21,7 @@ export function Servicios() {
   }, []);
 
   return (
-    <section className="mt-[105vh]">
+    <section id="servicios" className="mt-[105vh]">
       <div className="flex h-[10vh] w-full items-center justify-center bg-main-default md:h-[13vh]">
         <h2
           data-aos="zoom-in"

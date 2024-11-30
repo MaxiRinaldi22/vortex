@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { ContactBtn } from "@/components/ui/ContactBtn";
@@ -83,10 +84,13 @@ export function Hero() {
 
   return (
     <>
-      <div className="z-40 flex flex-col items-center justify-center gap-3">
+      <div
+        id="inicio"
+        className="z-40 flex flex-col items-center justify-center gap-3"
+      >
         <h1
           ref={mainTextRef}
-          className="absolute left-1/2 top-[30%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-3 px-5 text-center text-3xl font-[100] text-white will-change-transform md:top-[36%] md:gap-7 md:p-0 md:text-7xl"
+          className="absolute left-1/2 top-[30%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-3 px-5 text-center text-3xl font-[200] text-white will-change-transform md:top-[36%] md:gap-7 md:p-0 md:text-7xl"
         >
           Nuestro objetivo es llevar tu negocio al
           <br />
@@ -124,26 +128,29 @@ export function Hero() {
 
       <div className="absolute left-1/2 top-[93%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-5 px-7 md:top-[94%] md:justify-between md:gap-6">
         <div className="flex w-full items-center justify-center gap-5 md:gap-20">
-          {CLIENTS.map((elements, i) => {
-            return (
-              <div
-                ref={(el) => {
-                  if (el) {
-                    imgRef.current[i] = el;
-                  }
-                }}
-                key={elements.alt}
-                className="flex items-center justify-center"
-              >
+          {CLIENTS.map((elements, i) => (
+            <div
+              ref={(el) => {
+                if (el) {
+                  imgRef.current[i] = el;
+                }
+              }}
+              key={elements.alt}
+              className="flex items-center justify-center"
+            >
+              <a className="cursor-pointer" href={
+                elements.href
+              }
+              target="_blank">
                 <Image
                   src={elements.img}
                   alt={elements.alt}
                   height={elements.scale}
                   width={elements.scale}
                 />
-              </div>
-            );
-          })}
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </>

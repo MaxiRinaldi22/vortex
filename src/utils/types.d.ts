@@ -4,6 +4,7 @@ export type CLIENTES_TYPE = {
   img: StaticImageData;
   alt: string;
   scale: number;
+  href: string
 };
 
 export type DATA = {

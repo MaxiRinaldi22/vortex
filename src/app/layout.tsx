@@ -3,7 +3,7 @@ import "aos/dist/aos.css";
 import "./globals.css";
 import { lexend } from "@/utils/fonts";
 import { Header } from "@/components/Header";
-import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTop from "@/utils/ScrollToTop";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {

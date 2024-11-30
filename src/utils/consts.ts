@@ -6,26 +6,26 @@ import LPD from "/public/clientes/LPD.png";
 export const LINKS = [
   {
     title: "Inicio",
-    href: "/",
+    href: "inicio",
   },
   {
     title: "Nuestros Servicios",
-    href: "/",
+    href: "servicios",
   },
   {
     title: "Metodolgia de Trabajo",
-    href: "/",
+    href: "metodologia",
   },
   {
     title: "Contacto",
-    href: "/",
+    href: "contacto",
   },
 ];
 
 export const CLIENTS: CLIENTES_TYPE[] = [
-  { img: gf, alt: "GF Barber Studio logo", scale: 70 },
-  { img: dr, alt: "DR Construcciones en steel logo", scale: 100 },
-  { img: LPD, alt: "Liceo Padre Domingo logo", scale: 44 },
+  { img: gf, alt: "GF Barber Studio logo", scale: 70, href: "https://gfbarberstudio.com/" },
+  { img: dr, alt: "DR Construcciones en steel logo", scale: 100, href: "https://drconstruccionesensteel.com/" },
+  { img: LPD, alt: "Liceo Padre Domingo logo", scale: 44, href:"https://colegiopadredomingo.edu.uy/" },
 ];
 
 export const ESTRATIEGIAS_DIGITALES_DATA: DATA[] = [

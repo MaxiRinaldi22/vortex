@@ -5,8 +5,8 @@ import gsap from "gsap";
 import Image from "next/image";
 import useOnTop from "@/hooks/useOnTop";
 import { LINKS } from "@/utils/consts";
-import Link from "next/link";
 import { ContactInfo } from "./ui/ContactInfo";
+import { Link } from "react-scroll";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +15,6 @@ export function Header() {
   const top = useOnTop();
 
   // HAY QUE DESACTIVAR EL SCROLL ON Y CUANDO ESTA ABIERTO EL MOBILEMENU
-
   const handleDespawn = () => {
     if (mobileRef.current) {
       gsap.to(mobileRef.current, {
@@ -50,20 +49,22 @@ export function Header() {
       ref={headerRef}
       className={`fixed z-50 flex min-h-[10vh] w-full items-center justify-between px-5 transition duration-700 ease-in-out md:px-72 ${top ? "bg-transparent" : "bg-[#1F1F1F]/80 shadow-xl backdrop-blur-md"} `}
     >
-      <Image
-        src="/vortexText.png"
-        height={160}
-        width={160}
-        className="z-50 hidden md:block"
-        alt="MFM logo"
-      />
-      <Image
-        src="/vortexText.png"
-        height={110}
-        width={110}
-        className="z-50 block md:hidden"
-        alt="MFM logo"
-      />
+      <Link to="inicio" duration={2000} className="cursor-pointer z-50" smooth={true} offset={-100}>
+        <Image
+          src="/vortexText.png"
+          height={160}
+          width={160}
+          className="z-50 hidden md:block"
+          alt="MFM logo"
+        />
+        <Image
+          src="/vortexText.png"
+          height={110}
+          width={110}
+          className="z-50 block md:hidden"
+          alt="MFM logo"
+        />
+      </Link>
 
       {menuOpen ? (
         <button className="z-50 cursor-pointer" onClick={() => handleDespawn()}>
@@ -99,14 +100,18 @@ export function Header() {
           ref={mobileRef}
           className="absolute left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-between gap-5 bg-[#1F1F1F]/95 py-6 text-4xl tracking-widest text-white backdrop-blur-md"
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-          onClick={() => handleDespawn()}
+
         >
           <div className="flex h-full flex-col items-center justify-center gap-5">
             {LINKS.map((link) => (
               <Link
+                to={link.href}
+                duration={2000}
+                smooth={true}
+                offset={-100}
                 key={link.title}
-                href={link.href}
-                className="text-lg font-semibold tracking-[0.2em] text-white transition-all duration-150 ease-in-out hover:text-main-default md:text-3xl"
+                onClick={() => handleDespawn()}
+                className="cursor-pointer text-lg font-semibold tracking-[0.2em] text-white transition-all duration-150 ease-in-out hover:text-main-default md:text-3xl"
               >
                 {link.title}
               </Link>
