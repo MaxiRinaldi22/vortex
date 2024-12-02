@@ -65,19 +65,19 @@ export function ListItem({
       data-aos="fade-up"
       className="flex w-full flex-col items-center justify-center gap-3"
     >
-      {/* <div className="h-44 w-44 rounded-full border-2 border-main-default p-5"> */}
-        <Image src={img} alt="imagen" className="h-44 w-44" />
-      {/* </div> */}
+      <Image src={img} alt="imagen" className="h-44 w-44" />
       <h3 className="w-full pb-10 text-center text-2xl tracking-widest text-white">
         {title}
       </h3>
-      <ul className="flex w-[450px]  flex-col gap-6 text-base font-[200] text-white md:w-full">
+      <ul className="flex w-[450px] flex-col gap-6 text-base font-[200] text-white md:w-full">
         {info.map((item, i) => (
-          <li key={item.title} className="flex w-full flex-col px-14 md:px-0">
-            <div className="flex items-center justify-between">
+          <li
+            key={item.title}
+            className="flex w-full flex-col px-14 md:max-w-[470px] md:px-0"
+          >
+            <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
-                {/* <div className="h-2 w-2 rounded-full bg-white"></div> */}
-                <h4 className="font-[300]">{item.title}</h4>
+                <h4 className="max-w-[300px] md:max-w-[500px] font-[300]">{item.title}</h4>
               </div>
               <button onClick={() => handleOpen(i)}>
                 <svg
@@ -92,7 +92,6 @@ export function ListItem({
                 </svg>
               </button>
             </div>
-            {/* FALTA AÑADIR ANIMACION PARA ABRIR Y CERRAR */}
             {open[i] && (
               <p
                 ref={(el) => {
@@ -101,7 +100,7 @@ export function ListItem({
                   }
                 }}
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-                className="mt-2 max-w-[500px] text-sm font-[200] tracking-widest text-neutral-300"
+                className="mt-2 md:max-w-[400px] max-w-[300px] text-sm font-[200] tracking-widest text-neutral-300"
               >
                 {item.description}
               </p>

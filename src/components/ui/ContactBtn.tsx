@@ -44,9 +44,15 @@ export function ContactBtn() {
       ></div>
       <button
         ref={btnRef}
-        className={`absolute  z-50 flex h-12 w-[250px] cursor-pointer items-center justify-center rounded-full bg-main-default px-7 py-2 text-xl tracking-[0.2em] text-white will-change-transform ${goldman.className}`}
+        className={`absolute z-50 flex h-12 w-[250px] cursor-pointer items-center justify-center rounded-full bg-main-default px-7 py-2 text-xl tracking-[0.2em] text-white will-change-transform ${goldman.className}`}
       >
-        <Link to="contacto" className="will-change-transform" duration={2000} smooth={true} offset={-100}>
+        <Link
+          to="contacto"
+          className="will-change-transform"
+          duration={2000}
+          smooth={true}
+          offset={-100}
+        >
           CONTACTANOS
         </Link>
       </button>

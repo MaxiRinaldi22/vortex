@@ -37,7 +37,6 @@ export default function Intro() {
     });
   }, []);
 
-  // HACER QUE NO SE PUEDA BAJAR SI LA ANIMACION SE ESTA EJECUNTANDO
   return (
     <section>
       <div
@@ -53,10 +52,10 @@ export default function Intro() {
           alt="Vortex Webs logo"
           height={500}
           width={500}
+          priority
         />
       </div>
-      {/* 
-      <div>
+      {/* <div>
         PONER UNA FLECHA QUE BAJE HACIA ABAJO CUANDO ESTE EN TOP Y SI NO ESTA EN TOP QUE SEA PARA ARRIBA
       </div> */}
       <Hero />

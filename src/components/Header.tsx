@@ -14,7 +14,6 @@ export function Header() {
   const headerRef = useRef(null);
   const top = useOnTop();
 
-  // HAY QUE DESACTIVAR EL SCROLL ON Y CUANDO ESTA ABIERTO EL MOBILEMENU
   const handleDespawn = () => {
     if (mobileRef.current) {
       gsap.to(mobileRef.current, {

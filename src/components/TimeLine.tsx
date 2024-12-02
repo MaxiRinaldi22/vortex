@@ -14,7 +14,10 @@ export function TimeLine() {
   }, []);
 
   return (
-    <section id="metodologia" className="flex w-full flex-col items-center justify-center gap-10 md:gap-24">
+    <section
+      id="metodologia"
+      className="flex w-full flex-col items-center justify-center gap-10 md:gap-24"
+    >
       <div
         data-aos="zoom-in"
         className="flex w-full flex-col items-center justify-center gap-5 px-5 md:px-0"
@@ -24,11 +27,10 @@ export function TimeLine() {
         >
           Metodologia de trabajo
         </h2>
-        <p className="max-w-[800px] font-[200] text-white md:text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aliquid a
-          corrupti quam voluptatem inventore est nam accusamus voluptas
-          exercitationem. Soluta iste, libero aliquam fugit voluptatem in nisi
-          corrupti ullam et ut iusto neque, cupiditate ipsum?
+        <p className="max-w-[800px] pl-3 text-lg font-[200] text-white md:pl-0 md:text-center">
+          Con nuestra experiencia hemos diseñado una metodología de trabajo que
+          garantiza la ejecución de proyectos de manera eficiente y efectiva,
+          adaptándonos a las necesidades de cada cliente.
         </p>
       </div>
       <div className="relative mb-20 flex w-full flex-col items-center px-5 pb-10">
@@ -62,7 +64,6 @@ export function TimeLine() {
                 }
                 className="relative h-64 w-72 rounded-lg bg-[#3B3B3B] p-2 text-white md:h-44 md:w-[450px] md:pl-3"
               >
-                {/* Punta del cuadro */}
                 <div
                   className={`absolute right-[286px] top-[54px] h-0 w-0 border-y-[10px] border-r-[10px] border-y-transparent border-r-[#3B3B3B] ${index % 2 !== 0 ? "md:-right-[10px] md:rotate-180" : "md:right-[450px]"} md:top-[39px]`}
                 ></div>

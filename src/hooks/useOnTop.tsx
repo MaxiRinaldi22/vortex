@@ -12,7 +12,6 @@ const useOnTop = () => {
 
     window.addEventListener('scroll', handleScroll);
     
-    // Verificar la posición inicial
     handleScroll();
 
     return () => {
