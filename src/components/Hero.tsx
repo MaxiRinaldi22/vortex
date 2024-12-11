@@ -119,7 +119,7 @@ export function Hero() {
           >
             soluciones digitales creativas
           </span>
-          para destacat tu marca.
+          para destacar tu marca.
         </h1>
       </div>
 
