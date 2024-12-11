@@ -12,7 +12,7 @@ export function ContactBtn() {
   useEffect(() => {
     gsap.fromTo(
       btnRef.current,
-      { opacity: 0, scale: 0.5 },
+      { opacity: 0, scale: 0.7 },
       {
         scale: 1,
         opacity: 1,

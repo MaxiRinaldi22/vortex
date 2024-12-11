@@ -19,6 +19,7 @@ export default function Intro() {
       {
         y: 220,
         x: -220,
+        froce3D: true,
       },
       {
         y: 0,

@@ -20,7 +20,7 @@ export function Hero() {
       mainTextRef.current,
       {
         opacity: 0,
-        scale: 0.5,
+        scale: 0.7,
       },
       {
         scale: 1,
@@ -28,6 +28,7 @@ export function Hero() {
         duration: 3,
         ease: "slow",
         delay: 5.7,
+        force3D: true,
       },
     );
 
@@ -112,7 +113,7 @@ export function Hero() {
           <br />
           <span
             ref={solRef}
-            className={`${goldman.className} text-3xl font-[400] text-main-default md:text-5xl 2xl:text-7xl md:tracking-widest`}
+            className={`${goldman.className} will-change-transform text-3xl font-[400] text-main-default md:text-5xl 2xl:text-7xl md:tracking-widest`}
             style={{
               textShadow: "2px 2px 5px rgba(51, 246, 246, 0)",
             }}
@@ -125,7 +126,9 @@ export function Hero() {
 
       <div
         ref={blurRef}
-        className="absolute left-1/2 top-[10%] z-[-10] flex h-[200px] w-[300px] -translate-x-1/2 -translate-y-[5%] transform flex-col items-center justify-center gap-3 rounded-full bg-main-dark px-5 blur-3xl md:top-[54%] md:h-[300px] md:w-[900px] md:-translate-y-[126%]"
+        className="absolute left-1/2 top-[10%] z-[-10] flex h-[200px] w-[300px] -translate-x-1/2 -translate-y-[5%] transform flex-col items-center justify-center gap-3 rounded-full bg-main-dark px-5 blur-3xl 
+        md:top-[54%] md:h-[300px] md:w-[900px] md:-translate-y-[126%] 
+        [@supports(-webkit-backdrop-filter:blur(0))]:blur-[1.5rem]"
       ></div>
 
       <div className="absolute left-1/2 top-[90%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col gap-4 px-5 md:top-[90%] md:gap-5">
