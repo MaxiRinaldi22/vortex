@@ -40,11 +40,11 @@ export function ContactBtn() {
     <div className="flex h-12 w-full items-center justify-center">
       <div
         ref={blurRef}
-        className="absolute h-12 w-[260px] rounded-full bg-main-default opacity-0 blur-[8px] filter"
+        className="absolute h-12 w-[360px] rounded-full bg-main-default opacity-0 blur-[8px] filter"
       ></div>
       <button
         ref={btnRef}
-        className={`absolute z-50 flex h-12 w-[250px] cursor-pointer items-center justify-center rounded-full bg-main-default px-7 py-2 text-xl tracking-[0.2em] text-white will-change-transform ${goldman.className}`}
+        className={`absolute z-50 flex h-12 w-[350px] cursor-pointer items-center justify-center rounded-full bg-main-default px-7 py-2 text-xl tracking-[0.2em] text-white will-change-transform ${goldman.className}`}
       >
         <Link
           to="contacto"
@@ -53,7 +53,7 @@ export function ContactBtn() {
           smooth={true}
           offset={-100}
         >
-          CONTACTANOS
+          ¡Contáctanos ahora!
         </Link>
       </button>
     </div>

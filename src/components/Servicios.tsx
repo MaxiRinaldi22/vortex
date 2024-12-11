@@ -36,7 +36,7 @@ export function Servicios() {
           title="Estrategias Digitales"
           info={ESTRATIEGIAS_DIGITALES_DATA}
         />
-        <ListItem title="Branding y Diseño" info={BRANDING_DATA} img={light} />
+        <ListItem  border={true} title="Branding y Diseño" info={BRANDING_DATA} img={light} />
         <ListItem
           title="Desarrollo Digital"
           info={DESAROLLO_DIGITALES_DATA}

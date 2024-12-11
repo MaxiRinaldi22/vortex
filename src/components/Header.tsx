@@ -46,9 +46,15 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className={`fixed z-50 flex min-h-[10vh] w-full items-center justify-between px-5 transition duration-700 ease-in-out md:px-72 ${top ? "bg-transparent" : "bg-[#1F1F1F]/80 shadow-xl backdrop-blur-md"} `}
+      className={`fixed z-50 flex min-h-[10vh] w-full items-center justify-between px-5 transition duration-700 md:px-20 ease-in-out 2xl:px-72 ${top ? "bg-transparent" : "bg-[#1F1F1F]/80 shadow-xl backdrop-blur-md"} `}
     >
-      <Link to="inicio" duration={2000} className="cursor-pointer z-50" smooth={true} offset={-100}>
+      <Link
+        to="inicio"
+        duration={2000}
+        className="z-50 cursor-pointer"
+        smooth={true}
+        offset={-100}
+      >
         <Image
           src="/vortexText.png"
           height={160}
@@ -69,12 +75,17 @@ export function Header() {
         <button className="z-50 cursor-pointer" onClick={() => handleDespawn()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
             viewBox="0 0 24 24"
-            width="32"
-            height="32"
-            fill="rgba(41,195,195,1)"
           >
-            <path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path>
+            <g fill="none" fill-rule="evenodd">
+              <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+              <path
+                fill="rgba(41,195,195,1)"
+                d="m12 13.414l5.657 5.657a1 1 0 0 0 1.414-1.414L13.414 12l5.657-5.657a1 1 0 0 0-1.414-1.414L12 10.586L6.343 4.929A1 1 0 0 0 4.93 6.343L10.586 12l-5.657 5.657a1 1 0 1 0 1.414 1.414z"
+              />
+            </g>
           </svg>
         </button>
       ) : (
@@ -82,24 +93,31 @@ export function Header() {
           className="z-50 cursor-pointer"
           onClick={() => setMenuOpen(true)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="36"
-            height="36"
-            fill="rgba(41,195,195,1)"
-          >
-            <path d="M18 18V20H6V18H18ZM21 11V13H3V11H21ZM18 4V6H6V4H18Z"></path>
-          </svg>
+       
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="36"
+        height="36"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="none"
+          stroke="rgba(41,195,195,1)"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M7 6h10M4 12h16M7 12h13M7 18h10"
+        />
+      </svg>
         </button>
       )}
+
 
       {menuOpen && (
         <div
           ref={mobileRef}
           className="absolute left-0 top-0 z-40 flex h-screen w-full flex-col items-center justify-between gap-5 bg-[#1F1F1F]/95 py-6 text-4xl tracking-widest text-white backdrop-blur-md"
           style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-
         >
           <div className="flex h-full flex-col items-center justify-center gap-5">
             {LINKS.map((link) => (

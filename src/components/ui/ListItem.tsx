@@ -10,10 +10,12 @@ export function ListItem({
   title,
   info,
   img,
+  border,
 }: {
   title: string;
   info: DATA[];
   img: StaticImageData;
+  border?: boolean;
 }) {
   const [open, setOpen] = useState<OPEN_STATE>(
     info.reduce((acc, _, index) => ({ ...acc, [index]: false }), {}),
@@ -63,7 +65,7 @@ export function ListItem({
   return (
     <div
       data-aos="fade-up"
-      className="flex w-full flex-col items-center justify-center gap-3"
+      className={`flex w-full flex-col items-center justify-center gap-3 px-10 py-5 ${border ? "md:border-x md:border-gray-500" : ""}`}
     >
       <Image src={img} alt="imagen" className="h-44 w-44" />
       <h3 className="w-full pb-10 text-center text-2xl tracking-widest text-white">
@@ -77,7 +79,9 @@ export function ListItem({
           >
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-3">
-                <h4 className="max-w-[300px] md:max-w-[500px] font-[300]">{item.title}</h4>
+                <h4 className="max-w-[300px] font-[300] md:max-w-[500px]">
+                  {item.title}
+                </h4>
               </div>
               <button onClick={() => handleOpen(i)}>
                 <svg
@@ -100,7 +104,7 @@ export function ListItem({
                   }
                 }}
                 style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-                className="mt-2 md:max-w-[400px] max-w-[300px] text-sm font-[200] tracking-widest text-neutral-300"
+                className="mt-2 max-w-[300px] text-sm font-[200] tracking-widest text-neutral-300 md:max-w-[400px]"
               >
                 {item.description}
               </p>
