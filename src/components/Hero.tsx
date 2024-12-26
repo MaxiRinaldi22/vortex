@@ -2,9 +2,10 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+
 import { ContactBtn } from "@/components/ui/ContactBtn";
 import { CLIENTS } from "@/utils/consts";
-import gsap from "gsap";
 import { goldman } from "@/utils/fonts";
 
 export function Hero() {
@@ -12,7 +13,7 @@ export function Hero() {
   const workBtnRef = useRef(null);
   const solRef = useRef(null);
   const blurRef = useRef(null);
-  const iconsRef = useRef(null)
+  const iconsRef = useRef(null);
   const imgRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
@@ -113,7 +114,7 @@ export function Hero() {
           <br />
           <span
             ref={solRef}
-            className={`${goldman.className} will-change-transform text-3xl font-[400] text-main-default md:text-5xl 2xl:text-7xl md:tracking-widest`}
+            className={`${goldman.className} text-3xl font-[400] text-main-default will-change-transform md:text-5xl md:tracking-widest 2xl:text-7xl`}
             style={{
               textShadow: "2px 2px 5px rgba(51, 246, 246, 0)",
             }}
@@ -126,9 +127,7 @@ export function Hero() {
 
       <div
         ref={blurRef}
-        className="absolute left-1/2 top-[10%] z-[-10] flex h-[200px] w-[300px] -translate-x-1/2 -translate-y-[5%] transform flex-col items-center justify-center gap-3 rounded-full bg-main-dark px-5 blur-3xl 
-        md:top-[54%] md:h-[300px] md:w-[900px] md:-translate-y-[126%] 
-        [@supports(-webkit-backdrop-filter:blur(0))]:blur-[1.5rem]"
+        className="absolute left-1/2 top-[10%] z-[-10] flex h-[200px] w-[300px] -translate-x-1/2 -translate-y-[5%] transform flex-col items-center justify-center gap-3 rounded-full bg-main-dark px-5 blur-3xl md:top-[54%] md:h-[300px] md:w-[900px] md:-translate-y-[126%] [@supports(-webkit-backdrop-filter:blur(0))]:blur-[1.5rem]"
       ></div>
 
       <div className="absolute left-1/2 top-[90%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col gap-4 px-5 md:top-[90%] md:gap-5">
@@ -139,7 +138,10 @@ export function Hero() {
         <ContactBtn />
       </div>
 
-      <div ref={iconsRef} className="absolute left-1/2 top-[63%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-5 px-7 md:top-[68%] md:justify-between md:gap-6">
+      <div
+        ref={iconsRef}
+        className="absolute left-1/2 top-[63%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-5 px-7 md:top-[68%] md:justify-between md:gap-6"
+      >
         <div className="flex items-center justify-center gap-5 border-y px-3 py-3 md:gap-20">
           {CLIENTS.map((elements, i) => (
             <div

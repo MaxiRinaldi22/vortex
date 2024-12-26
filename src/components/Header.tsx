@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import Image from "next/image";
-import useOnTop from "@/hooks/useOnTop";
-import { LINKS } from "@/utils/consts";
-import { ContactInfo } from "./ui/ContactInfo";
 import { Link } from "react-scroll";
+import Image from "next/image";
+import gsap from "gsap";
+
+import useOnTop from "@/hooks/useOnTop";
+import { ContactInfo } from "./ui/ContactInfo";
+import { LINKS } from "@/utils/consts";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,7 +47,7 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className={`fixed z-50 flex min-h-[10vh] w-full items-center justify-between px-5 transition duration-700 md:px-20 ease-in-out 2xl:px-72 ${top ? "bg-transparent" : "bg-[#1F1F1F]/80 shadow-xl backdrop-blur-md"} `}
+      className={`fixed z-50 flex min-h-[10vh] w-full items-center justify-between px-5 transition duration-700 ease-in-out md:px-20 2xl:px-72 ${top ? "bg-transparent" : "bg-[#1F1F1F]/80 shadow-xl backdrop-blur-md"} `}
     >
       <Link
         to="inicio"
@@ -93,25 +94,23 @@ export function Header() {
           className="z-50 cursor-pointer"
           onClick={() => setMenuOpen(true)}
         >
-       
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="36"
-        height="36"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="none"
-          stroke="rgba(41,195,195,1)"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M7 6h10M4 12h16M7 12h13M7 18h10"
-        />
-      </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="36"
+            height="36"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="rgba(41,195,195,1)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 6h10M4 12h16M7 12h13M7 18h10"
+            />
+          </svg>
         </button>
       )}
-
 
       {menuOpen && (
         <div

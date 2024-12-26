@@ -1,5 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
+import Aos from "aos";
+
 import { goldman } from "@/utils/fonts";
 import { ListItem } from "./ui/ListItem";
 import {
@@ -12,8 +15,6 @@ import {
 import graphic from "/public/services/graphic.png";
 import light from "/public/services/light.png";
 import work from "/public/services/work.png";
-import { useEffect } from "react";
-import Aos from "aos";
 
 export function Servicios() {
   useEffect(() => {
@@ -36,7 +37,12 @@ export function Servicios() {
           title="Estrategias Digitales"
           info={ESTRATIEGIAS_DIGITALES_DATA}
         />
-        <ListItem  border={true} title="Branding y Diseño" info={BRANDING_DATA} img={light} />
+        <ListItem
+          border={true}
+          title="Branding y Diseño"
+          info={BRANDING_DATA}
+          img={light}
+        />
         <ListItem
           title="Desarrollo Digital"
           info={DESAROLLO_DIGITALES_DATA}

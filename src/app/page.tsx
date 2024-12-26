@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
-import { Hero } from "@/components/Hero";
+import Image from "next/image";
+
 import { Servicios } from "@/components/Servicios";
 import { TimeLine } from "@/components/TimeLine";
 import { Contact } from "@/components/Contact";
+import { Hero } from "@/components/Hero";
 
 export default function Intro() {
   const logoRef = useRef(null);

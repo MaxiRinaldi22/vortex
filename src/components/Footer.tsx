@@ -1,10 +1,11 @@
-"use client"; 
+"use client";
 
-import Image from "next/image";
-import logo from "/public/vortexText.png";
-import { LINKS } from "@/utils/consts";
 import { Link } from "react-scroll";
+import Image from "next/image";
+
+import logo from "/public/vortexText.png";
 import { ContactInfo } from "./ui/ContactInfo";
+import { LINKS } from "@/utils/consts";
 
 export function Footer() {
   return (
@@ -26,7 +27,12 @@ export function Footer() {
                 key={link.title}
                 className="text-lg font-[200] tracking-widest text-white transition duration-300 ease-in-out hover:text-main-default md:text-base"
               >
-                <Link to={link.href} duration={2000} smooth={true} offset={-100}>
+                <Link
+                  to={link.href}
+                  duration={2000}
+                  smooth={true}
+                  offset={-100}
+                >
                   {link.title}
                 </Link>
               </button>

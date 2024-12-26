@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "aos/dist/aos.css";
 import "./globals.css";
+
+import ScrollToTop from "@/utils/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react"
 import { lexend } from "@/utils/fonts";
 import { Header } from "@/components/Header";
-import ScrollToTop from "@/utils/ScrollToTop";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -26,6 +28,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </ScrollToTop>
+        <Analytics />
       </body>
     </html>
   );

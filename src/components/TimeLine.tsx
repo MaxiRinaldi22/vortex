@@ -1,10 +1,11 @@
 "use client";
 
+import { useEffect } from "react";
+import Aos from "aos";
+
 import { useIsMobile } from "@/hooks/useMobile";
 import { TIMELINE_DATA } from "@/utils/consts";
 import { goldman } from "@/utils/fonts";
-import Aos from "aos";
-import { useEffect } from "react";
 
 export function TimeLine() {
   const mobile = useIsMobile();

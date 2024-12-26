@@ -1,9 +1,10 @@
 "use client";
 
-import gsap from "gsap";
 import { useEffect, useRef } from "react";
-import { goldman } from "@/utils/fonts";
 import { Link } from "react-scroll";
+import gsap from "gsap";
+
+import { goldman } from "@/utils/fonts";
 
 export function ContactBtn() {
   const btnRef = useRef(null);

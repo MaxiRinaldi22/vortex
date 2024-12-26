@@ -1,10 +1,11 @@
 "use client";
 
-import { DATA, OPEN_STATE, REF_OBJECT } from "@/utils/types";
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
 import Image, { StaticImageData } from "next/image";
+import gsap from "gsap";
 import Aos from "aos";
+
+import { DATA, OPEN_STATE, REF_OBJECT } from "@/utils/types";
 
 export function ListItem({
   title,

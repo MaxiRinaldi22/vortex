@@ -1,11 +1,12 @@
 "use client";
 
+import { FormEvent, useEffect, useRef, useState } from "react";
+import Aos from "aos";
+
+import emailjs from "@emailjs/browser";
+import { ContactInfo } from "./ui/ContactInfo";
 import { INPUT_DATA } from "@/utils/consts";
 import { goldman } from "@/utils/fonts";
-import { FormEvent, useEffect, useRef, useState } from "react";
-import { ContactInfo } from "./ui/ContactInfo";
-import emailjs from "@emailjs/browser";
-import Aos from "aos";
 
 export function Contact() {
   const form = useRef<HTMLFormElement | null>(null);
