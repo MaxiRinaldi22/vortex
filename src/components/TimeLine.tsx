@@ -43,7 +43,7 @@ export function TimeLine() {
             className={`relative flex w-full items-center md:justify-center md:pl-[472px] ${index % 2 === 0 ? "flex-row md:pl-[472px]" : "md:mr-[940px] md:flex-row-reverse"}`}
           >
             <p
-              className={`top-42 absolute hidden md:block ${index % 2 !== 0 ? "right-[calc(50%-36rem)]" : "left-[836px]"} text-5xl text-white`}
+              className={`top-42 absolute hidden md:block ${index % 2 !== 0 ? "right-[calc(50%-36rem)]" : "left-[calc(50%-6rem)]"} text-5xl text-white`}
             >
               {step.number}
             </p>

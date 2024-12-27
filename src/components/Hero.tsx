@@ -7,6 +7,8 @@ import gsap from "gsap";
 import { ContactBtn } from "@/components/ui/ContactBtn";
 import { CLIENTS } from "@/utils/consts";
 import { goldman } from "@/utils/fonts";
+import useOnTop from "@/hooks/useOnTop";
+import { Link } from "react-scroll";
 
 export function Hero() {
   const mainTextRef = useRef(null);
@@ -14,7 +16,10 @@ export function Hero() {
   const solRef = useRef(null);
   const blurRef = useRef(null);
   const iconsRef = useRef(null);
+  const arrowRef = useRef(null);
   const imgRef = useRef<HTMLDivElement[]>([]);
+
+  const isOnTop = useOnTop();
 
   useEffect(() => {
     gsap.fromTo(
@@ -98,6 +103,28 @@ export function Hero() {
         delay: 9,
       },
     );
+
+    gsap.fromTo(
+      arrowRef.current,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "slow",
+        delay: 8.5,
+        onComplete: () => {
+          gsap.to(arrowRef.current, {
+            y: 20,
+            duration: 1,
+            ease: "slow",
+            repeat: -1,
+            yoyo: true,
+          });
+        },
+      },
+    );
   }, []);
 
   return (
@@ -168,6 +195,34 @@ export function Hero() {
             </div>
           ))}
         </div>
+      </div>
+      <div
+        ref={arrowRef}
+        className={`absolute bottom-[calc(0%+150px)] left-1/2 flex -translate-x-1/2 transform items-center justify-center gap-5 pb-5 md:bottom-0 md:left-[calc(100%-50px)] ${isOnTop ? "block" : "hidden"}`}
+      >
+        <Link
+          to="servicios"
+          duration={2000}
+          className="z-50 cursor-pointer"
+          smooth={true}
+          offset={-100}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="#29C3C3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="m19 9l-7 6l-7-6"
+            />
+          </svg>
+        </Link>
       </div>
     </>
   );
