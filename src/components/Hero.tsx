@@ -116,9 +116,9 @@ export function Hero() {
         delay: 8.5,
         onComplete: () => {
           gsap.to(arrowRef.current, {
-            y: 20,
+            y: 10,
             duration: 1,
-            ease: "slow",
+            ease: "power1.out",
             repeat: -1,
             yoyo: true,
           });
@@ -198,7 +198,7 @@ export function Hero() {
       </div>
       <div
         ref={arrowRef}
-        className={`absolute bottom-[calc(0%+150px)] left-1/2 flex -translate-x-1/2 transform items-center justify-center gap-5 pb-5 md:bottom-0 md:left-[calc(100%-50px)] ${isOnTop ? "block" : "hidden"}`}
+        className={`absolute bottom-[115px] left-1/2 flex -translate-x-1/2 transform items-center justify-center gap-5 pb-5 md:bottom-0 md:left-[calc(100%-50px)] ${isOnTop ? "block" : "hidden"}`}
       >
         <Link
           to="servicios"
