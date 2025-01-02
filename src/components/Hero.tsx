@@ -169,7 +169,9 @@ export function Hero() {
         ref={iconsRef}
         className="absolute left-1/2 top-[63%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-5 px-7 md:top-[68%] md:justify-between md:gap-6"
       >
-        <div className="flex items-center justify-center gap-5 border-y px-3 py-3 md:gap-20">
+        <div className="h-0.5 w-[300px]  md:w-[550px] bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
+
+        <div className="flex items-center justify-center gap-5 md:gap-20">
           {CLIENTS.map((elements, i) => (
             <div
               ref={(el) => {
@@ -195,6 +197,7 @@ export function Hero() {
             </div>
           ))}
         </div>
+        <div className="h-0.5 w-[300px] md:w-[550px] bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
       </div>
       <div
         ref={arrowRef}

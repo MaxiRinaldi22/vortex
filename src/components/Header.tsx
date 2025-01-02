@@ -9,6 +9,8 @@ import useOnTop from "@/hooks/useOnTop";
 import { ContactInfo } from "./ui/ContactInfo";
 import { LINKS } from "@/utils/consts";
 
+import Logo from "/public/vortexText.png";
+
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const mobileRef = useRef(null);
@@ -57,14 +59,14 @@ export function Header() {
         offset={-100}
       >
         <Image
-          src="/vortexText.png"
+        src={Logo}
           height={160}
           width={160}
           className="z-50 hidden md:block"
           alt="MFM logo"
         />
         <Image
-          src="/vortexText.png"
+        src={Logo}
           height={110}
           width={110}
           className="z-50 block md:hidden"

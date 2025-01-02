@@ -9,6 +9,8 @@ import { TimeLine } from "@/components/TimeLine";
 import { Contact } from "@/components/Contact";
 import { Hero } from "@/components/Hero";
 
+import logo from "/public/vortex.png"
+
 export default function Intro() {
   const logoRef = useRef(null);
 
@@ -50,10 +52,10 @@ export default function Intro() {
         }}
       >
         <Image
-          src="/vortex.png"
+        src={logo}
           alt="Vortex Webs logo"
-          height={500}
-          width={500}
+          height={250}
+          width={250}
           priority
         />
       </div>

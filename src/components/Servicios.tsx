@@ -31,18 +31,15 @@ export function Servicios() {
           NUESTROS SERVICIOS
         </h2>
       </div>
-      <div className="flex w-full flex-col items-center justify-around gap-20 px-10 py-20 md:flex-row md:items-start md:px-20 md:py-44">
+      <div className="flex w-full flex-col items-center justify-around gap-5 md:gap-20 px-10 py-20 md:flex-row md:items-start md:px-20 md:py-44">
         <ListItem
           img={graphic}
           title="Estrategias Digitales"
           info={ESTRATIEGIAS_DIGITALES_DATA}
         />
-        <ListItem
-          border={true}
-          title="Branding y Diseño"
-          info={BRANDING_DATA}
-          img={light}
-        />
+       <div className="h-0.5 w-[300px] md:w-2 bg-gradient-to-r md:bg-gradient-to-b from-transparent via-gray-400 to-transparent md:h-[600px]"></div>
+        <ListItem title="Branding y Diseño" info={BRANDING_DATA} img={light} />
+        <div className="h-0.5 w-[300px] md:w-2 bg-gradient-to-r md:bg-gradient-to-b from-transparent via-gray-400 to-transparent md:h-[600px]"></div>
         <ListItem
           title="Desarrollo Digital"
           info={DESAROLLO_DIGITALES_DATA}

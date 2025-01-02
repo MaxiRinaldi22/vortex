@@ -11,12 +11,10 @@ export function ListItem({
   title,
   info,
   img,
-  border,
 }: {
   title: string;
   info: DATA[];
   img: StaticImageData;
-  border?: boolean;
 }) {
   const [open, setOpen] = useState<OPEN_STATE>(
     info.reduce((acc, _, index) => ({ ...acc, [index]: false }), {}),
@@ -66,7 +64,7 @@ export function ListItem({
   return (
     <div
       data-aos="fade-up"
-      className={`flex w-full flex-col items-center justify-center gap-3 px-10 py-5 ${border ? "md:border-x md:border-gray-500" : ""}`}
+      className="flex w-full flex-col items-center justify-center gap-3 px-10 py-5"
     >
       <Image src={img} alt="imagen" className="h-44 w-44" />
       <h3 className="w-full pb-10 text-center text-2xl tracking-widest text-white">
