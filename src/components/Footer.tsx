@@ -44,7 +44,7 @@ export function Footer() {
         </div>
       </div>
       <p className="mb-1 mt-4 text-center text-sm font-[100] tracking-widest text-neutral-300 md:mt-6">
-        © 2023 Vortex Webs. Todos los derechos reservados
+        © {new Date().getFullYear()} Vortex Webs. Todos los derechos reservados
       </p>
     </footer>
   );
