@@ -42,7 +42,7 @@ export function Header() {
     gsap.fromTo(
       headerRef.current,
       { opacity: 0 },
-      { opacity: 1, duration: 3, delay: 4.7 },
+      { opacity: 1, duration: 1, delay: 2.7 },
     );
   }, []);
 

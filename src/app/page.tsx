@@ -28,16 +28,16 @@ export default function Intro() {
         y: 0,
         x: 0,
         clipPath: "polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)",
-        duration: 4,
+        duration: 1.8,
         ease: "slow",
       },
     );
 
     gsap.to(logoRef.current, {
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
       ease: "slow",
-      delay: 4.3,
+      delay: 2,
     });
   }, []);
 

@@ -31,10 +31,9 @@ export function Hero() {
       {
         scale: 1,
         opacity: 1,
-        duration: 3,
+        duration: 1,
         ease: "slow",
-        delay: 5.7,
-        force3D: true,
+        delay: 2.7,
       },
     );
 
@@ -47,9 +46,9 @@ export function Hero() {
       {
         scale: 1,
         opacity: 1,
-        duration: 3,
+        duration: 1,
         ease: "slow",
-        delay: 5.7,
+        delay: 1.7,
       },
     );
 
@@ -63,9 +62,9 @@ export function Hero() {
         y: 0,
         stagger: 1,
         opacity: 1,
-        duration: 2,
+        duration: 1,
         ease: "power4.out",
-        delay: 9,
+        delay: 3,
       },
     );
 
@@ -75,7 +74,7 @@ export function Hero() {
       textShadow: "2px 2px 5px rgba(51, 246, 246, 0.6)",
       ease: "slow",
       duration: 1,
-      delay: 8.5,
+      delay: 2.7,
     });
 
     gsap.fromTo(
@@ -87,7 +86,7 @@ export function Hero() {
         opacity: 1,
         duration: 1,
         ease: "slow",
-        delay: 8.5,
+        delay: 2.7,
       },
     );
 
@@ -100,7 +99,7 @@ export function Hero() {
         opacity: 1,
         duration: 1,
         ease: "slow",
-        delay: 9,
+        delay: 3,
       },
     );
 
@@ -113,7 +112,7 @@ export function Hero() {
         opacity: 1,
         duration: 1,
         ease: "slow",
-        delay: 8.5,
+        delay: 3,
         onComplete: () => {
           gsap.to(arrowRef.current, {
             y: 10,
@@ -154,14 +153,14 @@ export function Hero() {
 
       <div
         ref={blurRef}
-        className="absolute left-1/2 top-[10%] z-[-10] flex h-[200px] w-[300px] -translate-x-1/2 -translate-y-[5%] transform flex-col items-center justify-center gap-3 rounded-full bg-main-dark px-5 blur-3xl md:top-[54%] md:h-[300px] md:w-[900px] md:-translate-y-[126%] [@supports(-webkit-backdrop-filter:blur(0))]:blur-[1.5rem]"
+        className="absolute left-1/2 top-[10%] z-[-10] flex h-[200px] w-[300px] -translate-x-1/2 -translate-y-[5%] transform flex-col items-center justify-center gap-3 rounded-full bg-main-dark px-5 blur-3xl md:top-[54%] md:h-[300px] md:w-[900px] md:-translate-y-[126%]"
       ></div>
 
-      <div className="absolute left-1/2 top-[90%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col gap-4 px-5 md:top-[90%] md:gap-5">
-        <p
-          ref={workBtnRef}
-          className="w-full text-center text-sm font-[200] tracking-[0.2em] text-white will-change-transform md:text-lg"
-        ></p>
+      <div
+        ref={workBtnRef}
+        className="absolute left-1/2 top-[90%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col gap-4 px-5 md:top-[90%] md:gap-5"
+      >
+        <p className="w-full text-center text-sm font-[200] tracking-[0.2em] text-white will-change-transform md:text-lg"></p>
         <ContactBtn />
       </div>
 
@@ -169,7 +168,7 @@ export function Hero() {
         ref={iconsRef}
         className="absolute left-1/2 top-[63%] flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center gap-5 px-7 md:top-[68%] md:justify-between md:gap-6"
       >
-        <div className="h-0.5 w-[300px]  md:w-[550px] bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
+        <div className="h-0.5 w-[300px] bg-gradient-to-r from-transparent via-gray-400 to-transparent md:w-[550px]"></div>
 
         <div className="flex items-center justify-center gap-5 md:gap-20">
           {CLIENTS.map((elements, i) => (
@@ -197,7 +196,7 @@ export function Hero() {
             </div>
           ))}
         </div>
-        <div className="h-0.5 w-[300px] md:w-[550px] bg-gradient-to-r from-transparent via-gray-400 to-transparent"></div>
+        <div className="h-0.5 w-[300px] bg-gradient-to-r from-transparent via-gray-400 to-transparent md:w-[550px]"></div>
       </div>
       <div
         ref={arrowRef}
